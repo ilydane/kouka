@@ -40,4 +40,14 @@ if ( !function_exists( 'child_theme_configurator_css' ) ):
 endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
+//chargement des script jv du théme parent
+wp_enqueue_script('parent-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
+
+//chargement du css théme parent
+function theme_child_enqueue_styles() {
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
+}
+add_action('wp_enqueue_scripts', 'theme_child_enqueue_styles');
+
 // END ENQUEUE PARENT ACTION

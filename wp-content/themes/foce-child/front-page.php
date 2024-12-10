@@ -4,12 +4,13 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-    <section class="banner">
+     <section class="banner">
         <video autoplay muted loop class="video-bg">
             <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/videos/background.mp4" type="video/mp4">
             Votre navigateur ne supporte pas les vidéos HTML5.
         </video>
-    </section>
+      </section>
+      <section id="#story" class="story">
             <h2>L'histoire</h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
