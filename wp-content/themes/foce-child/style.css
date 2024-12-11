@@ -27,5 +27,8 @@ article.story__article::after 	{
     display: inline-block; /* Assure que les images restent en ligne */
 }
 
-
-h2 {color: blue;}
+h2::after 	{
+    animation: rotate 20s linear infinite; /* 3s pour une rotation complète, répétée à l'infini */
+    transform-origin: center; /* Rotation autour du centre */
+    display: inline-block; /* Assure que les images restent en ligne */
+}
