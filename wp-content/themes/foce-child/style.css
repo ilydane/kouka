@@ -32,3 +32,32 @@ h2::after 	{
     transform-origin: center; /* Rotation autour du centre */
     display: inline-block; /* Assure que les images restent en ligne */
 }
+
+
+
+/*				test effet fade in */
+/*fonctionne pas pour le moment */
+section.story {
+	opacity: 0,2;
+	transition: opacity 1s ease, transform 1s ease;
+  }
+/* tjs pas */ 
+
+section.story.fade-in {
+	opacity: 0.2;
+	transform: translateY(1.);
+  }
+
+  /*				test apparition des titre des sections  */
+
+  .title {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .show {
+	opacity: 1;
+	transform: translateY(0);
+  }
+	
+

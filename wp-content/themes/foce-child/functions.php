@@ -13,6 +13,7 @@ function child_theme_enqueue_assets() {
     // Charger les scripts principaux du parent
     wp_enqueue_script('parent-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery'), null, true);
     wp_enqueue_script('parent-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), null, true);
+    wp_enqueue_script('child-animations-script', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), null, true);
 
     // Charger des scripts supplémentaires si nécessaire (thème enfant)
     // Exemple : wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/js/child-script.js', array('jquery'), null, true);
@@ -31,6 +32,7 @@ if (get_stylesheet() !== get_template()) {
     });
 }
 
+
 // Charger le fichier de style pour les configurations RTL (si nécessaire)
 function load_rtl_stylesheet($uri) {
     if (empty($uri) && is_rtl() && file_exists(get_template_directory() . '/rtl.css')) {
@@ -39,3 +41,4 @@ function load_rtl_stylesheet($uri) {
     return $uri;
 }
 add_filter('locale_stylesheet_uri', 'load_rtl_stylesheet');
+
