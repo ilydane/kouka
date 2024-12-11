@@ -1,0 +1,32 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+  
+  .story {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+      &::before {
+        content: url('./assets/images/sunflower_leaves.png');
+        position: absolute;
+        left: 0;
+        top: 1.8em;
+        z-index: -1;
+      }
+      &::after {
+        content: url('./Sunflower.png');
+        position: absolute;
+        left: 0.7em;
+        top: 6em;
+      }
+    }
+  }
+
+  

@@ -50,4 +50,16 @@ function theme_child_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'theme_child_enqueue_styles');
 
+
+//rotation fleurs 
+
+function foce_child_enqueue_styles() {
+    // Charger le CSS principal du parent
+    wp_enqueue_style('foce-parent-style', get_template_directory_uri() . '/style.css');
+    
+    // Charger le CSS compilé du thème enfant
+    wp_enqueue_style('foce-child-style', get_stylesheet_directory_uri() . '/style.css', array('foce-parent-style'));
+}
+add_action('wp_enqueue_scripts', 'foce_child_enqueue_styles');
+
 // END ENQUEUE PARENT ACTION
