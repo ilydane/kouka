@@ -1,0 +1,17 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.article.story__article::after 	{
+    animation: rotate 3s linear infinite; /* 3s pour une rotation complète, répétée à l'infini */
+    transform-origin: center; /* Rotation autour du centre */
+    display: inline-block; /* Assure que les images restent en ligne */
+}
+
+
+h2 {color:red;}
